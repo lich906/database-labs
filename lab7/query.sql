@@ -95,14 +95,14 @@ WHERE m.mark < 5;
 ROLLBACK;
 
 #7. Добавить необходимые индексы.
-CREATE INDEX IX_mark_id_student
-    ON mark (id_student);
+#CREATE INDEX IX_mark_id_student
+#    ON mark (id_student);
 
-CREATE INDEX IX_mark_id_lesson
-    ON mark (id_lesson);
+#CREATE INDEX IX_mark_id_lesson
+#    ON mark (id_lesson);
 
-CREATE INDEX IX_lesson_id_teacher
-    ON lesson (id_teacher);
+CREATE INDEX IX_mark_id_student_id_lesson
+    ON mark(id_student, id_lesson);
 
 CREATE INDEX IX_lesson_id_subject
     ON lesson (id_subject);
